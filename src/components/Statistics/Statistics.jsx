@@ -1,17 +1,22 @@
-export const Statistic = ({title, stats}) => {
-    return (
-        <section>
+import {
+  StatisticsItem,
+  StatisticsList,
+  StatisticsSection,
+  StatisticsTitle,
+} from './Statistics.styled';
 
-            {title && (<h2>{ title }</h2> )}
-            <ul>
-            {stats.map(({id, label, percentage}) => (
-                <li key={id}>
-                    <span>{ label } </span>
-                    <span>{ percentage }</span>
-                </li>
-            ))}
-            </ul>
-            
-        </section>
-    );
-}
+export const Statistic = ({ title, stats, stats: { label } }) => {
+  return (
+    <StatisticsSection>
+      {title && <StatisticsTitle>{title}</StatisticsTitle>}
+      <StatisticsList>
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticsItem key={id} label={label}>
+            <span>{label} </span>
+            <span>{percentage}</span>
+          </StatisticsItem>
+        ))}
+      </StatisticsList>
+    </StatisticsSection>
+  );
+};
