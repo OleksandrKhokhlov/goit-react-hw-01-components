@@ -13,12 +13,12 @@ const Title = styled.tr`
 `;
 
 const TransactionsRow = styled.tr`
-height:40px;
-text-align:center;
-margin-top:10px;
-:nth-child(even) {
-background-color: gray;
-}
-`
+  height: 40px;
+  text-align: center;
+  margin-top: 10px;
+  :nth-of-type(even) {
+    background-color: gray;
+  }
+`;
 
 export { Table, Title, TransactionsRow };
